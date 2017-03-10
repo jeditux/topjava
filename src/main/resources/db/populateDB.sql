@@ -12,6 +12,12 @@ VALUES ('Admin', 'admin@gmail.com', 'admin');
 INSERT INTO meals (date_time, description, calories, user_id)
 VALUES ('2017-02-03 08:00', 'Breakfast', 500, 100000);
 
+INSERT INTO meals (date_time, description, calories, user_id)
+VALUES ('2017-03-09 14:13', 'Dinner', 1200, 100000);
+
+INSERT INTO meals (date_time, description, calories, user_id)
+VALUES ('2017-02-14 09:00', 'Admin Breakfast', 1000, 100001);
+
 INSERT INTO user_roles (role, user_id) VALUES
   ('ROLE_USER', 100000),
   ('ROLE_ADMIN', 100001);
