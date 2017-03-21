@@ -2,6 +2,7 @@ package ru.javawebinar.topjava.model;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
+import ru.javawebinar.topjava.util.LocalDateTimeAttributeConverter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -13,7 +14,7 @@ import java.time.LocalTime;
  * GKislin
  * 11.01.2015.
  */
-@SuppressWarnings("JpaQlInspection")
+//@SuppressWarnings("JpaQlInspection")
 @NamedQueries({
         @NamedQuery(name = Meal.ALL_SORTED, query = "SELECT m FROM Meal m WHERE m.user.id=:userId ORDER BY m.dateTime DESC"),
         @NamedQuery(name = Meal.DELETE, query = "DELETE FROM Meal m WHERE m.id=:id AND m.user.id=:userId"),
@@ -31,6 +32,7 @@ public class Meal extends BaseEntity {
 
     @Column(name = "date_time", nullable = false)
     @NotNull
+    //@Convert(converter = LocalDateTimeAttributeConverter.class)
     private LocalDateTime dateTime;
 
     @Column(name = "description", nullable = false)
