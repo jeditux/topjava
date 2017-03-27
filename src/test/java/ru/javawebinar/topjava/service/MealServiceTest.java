@@ -35,7 +35,7 @@ import static ru.javawebinar.topjava.UserTestData.USER_ID;
 @RunWith(SpringJUnit4ClassRunner.class)
 @Sql(scripts = "classpath:db/populateDB.sql", config = @SqlConfig(encoding = "UTF-8"))
 @ActiveProfiles(Profiles.ACTIVE_DB)
-public class MealServiceTest {
+public abstract class MealServiceTest {
     private static final Logger LOG = LoggerFactory.getLogger(MealServiceTest.class);
     private static StringBuilder results = new StringBuilder();
 
@@ -63,7 +63,7 @@ public class MealServiceTest {
     }
 
     @Autowired
-    private MealService service;
+    protected MealService service;
 
     @Test
     public void testDelete() throws Exception {
